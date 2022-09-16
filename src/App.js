@@ -2,7 +2,6 @@ import React from 'react';
 import './App.css';
 import Comment from './Comment';
 import ImageDiv from './Image';
-import ListItem from './ListItem';
 
 export default function App() {
   const [states, setStates] = React.useState("");
