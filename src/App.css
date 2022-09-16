@@ -8,7 +8,8 @@
 }
 
 .logo {
-  margin-top: 1.5rem;
+  margin-top: 1rem;
+  margin-bottom: 0.1rem;
 }
 
 .Flatagram-container {
@@ -16,6 +17,10 @@
   width: 19rem;
   background-color: aliceblue;
   border-radius: 0.7rem;
+}
+
+.Image-title {
+  padding: 1rem;
 }
 
 .ImageTile {
