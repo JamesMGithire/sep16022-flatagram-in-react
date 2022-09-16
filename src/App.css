@@ -6,12 +6,23 @@
   flex-direction: column;
   align-items: center;
 }
-.logo{
+
+.logo {
   margin-top: 1.5rem;
 }
-.Flatagram-container{
+
+.Flatagram-container {
   height: 26rem;
   width: 19rem;
   background-color: aliceblue;
   border-radius: 0.7rem;
+}
+
+.ImageTile{
+  height: 20rem;
+  width: 19rem;
+  /* background-color: aqua; */
+  background-position: 0;
+  background-size: cover;
+  background-repeat: none;
 }
