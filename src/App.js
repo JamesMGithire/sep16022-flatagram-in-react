@@ -15,7 +15,8 @@ export default function App() {
   }, [])
   let title = states
   let newTtl = (title.replace("https://images.dog.ceo/breeds/", "").slice(0, title.indexOf("/"))).replace("/", "")
-  let capitalisedTitle = newTtl.charAt(0).toUpperCase() + newTtl.slice(1)
+  let capitalisedTitle = newTtl.charAt(0).toUpperCase() + newTtl.slice(1);
+
   return (
     <div className="App">
       <img className="logo" src='./flatagram-logo.png' alt='flatagram logo' />
@@ -25,7 +26,8 @@ export default function App() {
           newImage={states}
           newTitle={capitalisedTitle}
         />
-        <Comment/>
+        <Comment
+        />
       </div>
     </div>
   );
