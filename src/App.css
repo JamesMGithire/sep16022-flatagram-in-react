@@ -18,6 +18,8 @@
   background-color: rgb(105, 252, 227);
   border-radius: 0.7rem;
   padding-bottom: 1rem;
+  overflow: hidden;
+  z-index: 0;
 }
 
 .Image-title {
@@ -39,6 +41,7 @@
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
+  z-index: 1;
 }
 
 .textInput {
@@ -65,6 +68,70 @@
   border: none;
   margin: 5px;
   border-radius: 5px;
+  z-index: 1;
+}
+
+.ball {
+  z-index: -1;
+  height: 30px;
+  width: 30px;
+  background-color: cadetblue;
+  opacity: 0.3;
+  border-radius: 50%;
+  position: absolute;
+  top: 50vh;
+  left: 50%;
+}
+
+#ball1 {
+  animation: ballmoves 17s 29s infinite backwards;
+  background-color: rgb(159, 160, 95);
+}
+
+#ball2 {
+  animation: ballmoves 47s 19s ease alternate infinite;
+  background-color: rgb(86, 37, 126);
+}
+
+#ball3 {
+  animation: ballmoves 43s 7s ease alternate infinite;
+  background-color: rgb(126, 37, 37);
+}
+#ball4{
+  animation: ballmoves 33s 0s ease infinite backwards;
+  background-color: rgb(37, 126, 111);
+}
+
+@keyframes ballmoves {
+  0% {
+    transform: translate(-20vh, -10vh);
+  }
+
+  20% {
+    transform: translate(100vh, -40vh);
+    opacity: 0;
+  }
+
+  40% {
+    transform: translate(-50vh, -70vh);
+  }
+
+  60% {
+    transform: translate(-40vh, -50vh);
+    opacity: 0.3;
+
+  }
+
+  80% {
+    transform: translate(10vh, 0vh);
+    opacity: 0;
+  }
+
+  100% {
+    transform: translate(-20vh, -10vh);
+    opacity: 0.3;
+  }
+
 }
 
 @media (max-width:22rem) {
@@ -87,5 +154,10 @@
     border-radius: 0px;
     width: 100%;
     min-height: 100vh;
+  }
+}
+@media (max-width:1000px){
+  .ball{
+    display: none;
   }
 }

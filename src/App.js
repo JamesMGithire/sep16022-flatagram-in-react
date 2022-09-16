@@ -10,18 +10,18 @@ export default function App() {
       .then(resp => resp.json())
       .then(result => setStates(result.message))
   }
+  const [commentList, setCommentL] = React.useState([{ "content": "Hello" }])
   React.useEffect(() => {
     fetcher()
   }, [])
   let title = states
   let newTtl = (title.replace("https://images.dog.ceo/breeds/", "").slice(0, title.indexOf("/"))).replace("/", "")
-  let capitalisedTitle = newTtl.charAt(0).toUpperCase() + newTtl.slice(1);
+  let capitalisedTitle = newTtl.toUpperCase();
 
-  // let commentsUl = null;
   let inputText = null;
   function handleDelete(e) {
     setCommentL(prevVal => {
-      return(prevVal.filter((el) =>
+      return (prevVal.filter((el) =>
         el.content !== e.target.textContent
       ));
     })
@@ -29,7 +29,6 @@ export default function App() {
   function handleSubmit(e) {
     e.preventDefault();
     let comment = inputText.value
-    // let comments = commentsUl.innerHTML;
     inputText.value = "";
     if (comment !== "") {
       setCommentL(prev => [...prev, { "content": comment }])
@@ -38,11 +37,7 @@ export default function App() {
       alert("No comment");
     }
   }
-  const [commentList, setCommentL] = React.useState([{ "content": "Hello" }])
-  React.useEffect(() => {
-    setCommentL(commentList)
-    console.log(commentList)
-  }, [commentList])
+  console.log("run")
   return (
     <div className="App">
       <img className="logo" src='./flatagram-logo.png' alt='flatagram logo' />
@@ -58,6 +53,10 @@ export default function App() {
           commentRef={input => { inputText = input }}
           del={handleDelete}
         />
+        <div className='ball' id="ball4"></div>
+        <div className='ball' id="ball1"></div>
+        <div className='ball' id="ball2"></div>
+        <div className='ball' id="ball3"></div>
       </div>
     </div>
   );
