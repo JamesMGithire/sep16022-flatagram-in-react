@@ -17,6 +17,20 @@ export default function App() {
   let newTtl = (title.replace("https://images.dog.ceo/breeds/", "").slice(0, title.indexOf("/"))).replace("/", "")
   let capitalisedTitle = newTtl.charAt(0).toUpperCase() + newTtl.slice(1);
 
+  let commentsUl = null;
+  let inputText = null;
+  let handleSubmit = (e) => {
+    e.preventDefault();
+    let comment = inputText.value
+    let comments = commentsUl.innerHTML;
+    inputText.value = "";
+    if (comment !== "") {
+      commentsUl.innerHTML = comments + `<li>${comment}</li>`
+    }
+    else {
+      alert("No comment");
+    }
+  }
   return (
     <div className="App">
       <img className="logo" src='./flatagram-logo.png' alt='flatagram logo' />
@@ -27,6 +41,9 @@ export default function App() {
           newTitle={capitalisedTitle}
         />
         <Comment
+          handlePost={handleSubmit}
+          commentContentRef={content => { commentsUl = content }}
+          commentRef={input => { inputText = input }}
         />
       </div>
     </div>
