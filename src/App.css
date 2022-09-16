@@ -30,6 +30,7 @@
   list-style: none;
   text-align: left;
   cursor: pointer;
+  line-height: 15px;
 }
 
 .ImageTile {
