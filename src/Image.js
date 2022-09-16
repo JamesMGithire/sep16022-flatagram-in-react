@@ -1,8 +1,5 @@
 import { Component } from "react";
 export default class ImageDiv extends Component {
-    constructor(props) {
-        super();
-    }
     render() {
         return (
             <div className='ImageDiv'>
