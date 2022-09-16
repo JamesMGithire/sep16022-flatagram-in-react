@@ -1,5 +1,6 @@
 import React, { useEffect } from 'react';
 import './App.css';
+import Comment from './Comment';
 import ImageDiv from './Image';
 
 export default function App() {
@@ -24,6 +25,7 @@ export default function App() {
           newImage={states}
           newTitle={capitalisedTitle}
         />
+        <Comment/>
       </div>
     </div>
   );
