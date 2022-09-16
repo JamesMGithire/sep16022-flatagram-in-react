@@ -14,46 +14,76 @@
 
 .Flatagram-container {
   min-height: 26rem;
-  width: 19rem;
-  background-color: aliceblue;
+  width: 22rem;
+  background-color: rgb(105, 252, 227);
   border-radius: 0.7rem;
+  padding-bottom: 1rem;
 }
 
 .Image-title {
-  cursor:not-allowed;
+  cursor: not-allowed;
   padding: 0.5rem;
 }
-.comments{
+
+.comments {
   font-size: 10px;
-  list-style:none;
+  list-style: none;
   text-align: left;
 }
 
 .ImageTile {
   height: 20rem;
-  width: 19rem;
+  width: 22rem;
   background-position: center;
   background-size: cover;
   background-repeat: no-repeat;
 }
-.textInput{
+
+.textInput {
   width: 70%;
   font-size: 13px;
-  background-color:rgb(255, 255, 255);
+  background-color: rgb(255, 255, 255);
 }
-.textInput:focus{
+
+.textInput:focus {
   outline: none;
   box-shadow: 0px 0px 5px 1px rgba(252, 194, 4, 0.445);
 }
-.submit{
+
+.submit {
   font-weight: bold;
-  background-color:rgb(229, 247, 247);
+  background-color: rgb(229, 247, 247);
   color: rgb(0, 19, 185);
   cursor: pointer;
 }
-.textInput,.submit{
+
+.textInput,
+.submit {
   padding: 5px;
   border: none;
   margin: 5px;
   border-radius: 5px;
+}
+
+@media (max-width:22rem) {
+  .App {
+    padding: 0%;
+  }
+
+  .logo {
+    display: none;
+  }
+
+  .ImageTile {
+    width: 100%;
+    height: 50vh;
+    background-position: center;
+    background-size: contain;
+  }
+
+  .Flatagram-container {
+    border-radius: 0px;
+    width: 100%;
+    min-height: 100vh;
+  }
 }
