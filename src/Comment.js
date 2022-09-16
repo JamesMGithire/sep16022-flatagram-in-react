@@ -1,16 +1,12 @@
 import { Component } from "react";
 
 export default class Comment extends Component {
-    constructor(props) {
-        super();
-    }
     render() {
         return (
             <div>
                 <ul className="comments"
                     ref={this.props.commentContentRef}
                 >
-                    <li>Coffee</li>
                 </ul>
                 <form
                     className="form"
