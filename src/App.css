@@ -21,8 +21,7 @@
 .ImageTile{
   height: 20rem;
   width: 19rem;
-  /* background-color: aqua; */
-  background-position: 0;
+  background-position:center;
   background-size: cover;
   background-repeat: none;
 }
