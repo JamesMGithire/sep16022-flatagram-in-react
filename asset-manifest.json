@@ -1,0 +1,15 @@
+{
+  "files": {
+    "main.css": "/sep16022-flatagram-in-react/static/css/main.4b3886eb.css",
+    "main.js": "/sep16022-flatagram-in-react/static/js/main.207c729e.js",
+    "static/js/787.497a2943.chunk.js": "/sep16022-flatagram-in-react/static/js/787.497a2943.chunk.js",
+    "index.html": "/sep16022-flatagram-in-react/index.html",
+    "main.4b3886eb.css.map": "/sep16022-flatagram-in-react/static/css/main.4b3886eb.css.map",
+    "main.207c729e.js.map": "/sep16022-flatagram-in-react/static/js/main.207c729e.js.map",
+    "787.497a2943.chunk.js.map": "/sep16022-flatagram-in-react/static/js/787.497a2943.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.4b3886eb.css",
+    "static/js/main.207c729e.js"
+  ]
+}
