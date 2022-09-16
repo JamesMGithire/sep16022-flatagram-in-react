@@ -1,12 +1,21 @@
 import { Component } from "react";
+import ListItem from "./ListItem";
 
 export default class Comment extends Component {
     render() {
+        let newArr = this.props.commentlist
+        let list = newArr.map((el) => {
+            return (
+                <ListItem
+                key = {Math.random()*10000}
+                    content={el.content}
+                    del={this.props.del}
+                />)
+        })
         return (
             <div>
                 <ul className="comments"
-                    ref={this.props.commentContentRef}
-                >
+                >{list}
                 </ul>
                 <form
                     className="form"
