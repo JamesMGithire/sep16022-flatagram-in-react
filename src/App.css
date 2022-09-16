@@ -18,10 +18,10 @@
   border-radius: 0.7rem;
 }
 
-.ImageTile{
+.ImageTile {
   height: 20rem;
   width: 19rem;
-  background-position:center;
+  background-position: center;
   background-size: cover;
-  background-repeat: none;
+  background-repeat: no-repeat;
 }
