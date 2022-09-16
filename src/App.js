@@ -1,7 +1,8 @@
-import React, { useEffect } from 'react';
+import React from 'react';
 import './App.css';
 import Comment from './Comment';
 import ImageDiv from './Image';
+import ListItem from './ListItem';
 
 export default function App() {
   const [states, setStates] = React.useState("");
@@ -10,27 +11,39 @@ export default function App() {
       .then(resp => resp.json())
       .then(result => setStates(result.message))
   }
-  useEffect(() => {
+  React.useEffect(() => {
     fetcher()
   }, [])
   let title = states
   let newTtl = (title.replace("https://images.dog.ceo/breeds/", "").slice(0, title.indexOf("/"))).replace("/", "")
   let capitalisedTitle = newTtl.charAt(0).toUpperCase() + newTtl.slice(1);
 
-  let commentsUl = null;
+  // let commentsUl = null;
   let inputText = null;
-  let handleSubmit = (e) => {
+  function handleDelete(e) {
+    setCommentL(prevVal => {
+      return(prevVal.filter((el) =>
+        el.content !== e.target.textContent
+      ));
+    })
+  }
+  function handleSubmit(e) {
     e.preventDefault();
     let comment = inputText.value
-    let comments = commentsUl.innerHTML;
+    // let comments = commentsUl.innerHTML;
     inputText.value = "";
     if (comment !== "") {
-      commentsUl.innerHTML = comments + `<li>${comment}</li>`
+      setCommentL(prev => [...prev, { "content": comment }])
     }
     else {
       alert("No comment");
     }
   }
+  const [commentList, setCommentL] = React.useState([{ "content": "Hello" }])
+  React.useEffect(() => {
+    setCommentL(commentList)
+    console.log(commentList)
+  }, [commentList])
   return (
     <div className="App">
       <img className="logo" src='./flatagram-logo.png' alt='flatagram logo' />
@@ -42,8 +55,9 @@ export default function App() {
         />
         <Comment
           handlePost={handleSubmit}
-          commentContentRef={content => { commentsUl = content }}
+          commentlist={commentList}
           commentRef={input => { inputText = input }}
+          del={handleDelete}
         />
       </div>
     </div>
