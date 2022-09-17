@@ -7,7 +7,8 @@ export default class Comment extends Component {
         let list = newArr.map((el) => {
             return (
                 <ListItem
-                key = {Math.random()*10000}
+                    key = {el.id}
+                    id={el.id}
                     content={el.content}
                     del={this.props.del}
                 />)
