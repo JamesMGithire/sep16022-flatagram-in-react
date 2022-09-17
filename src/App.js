@@ -2,6 +2,7 @@ import React from 'react';
 import './App.css';
 import Comment from './Comment';
 import ImageDiv from './Image';
+import flat from './flatagram-logo.png'
 
 export default function App() {
   const [states, setStates] = React.useState("");
@@ -10,7 +11,7 @@ export default function App() {
       .then(resp => resp.json())
       .then(result => setStates(result.message))
   }
-  const [commentList, setCommentL] = React.useState([{ "content": "Hello" }])
+  const [commentList, setCommentL] = React.useState([{ "content": "Hello", "id": Math.ceil(Math.random() * 10000) }])
   React.useEffect(() => {
     fetcher()
   }, [])
@@ -20,27 +21,25 @@ export default function App() {
 
   let inputText = null;
   function handleDelete(e) {
-    setCommentL(prevVal => {
-      return (prevVal.filter((el) =>
-        el.content !== e.target.textContent
-      ));
-    })
+    setCommentL(prevVal => (prevVal.filter((el) =>
+      parseInt(el.id) !== parseInt(e.target.id)
+    ))
+    )
   }
   function handleSubmit(e) {
     e.preventDefault();
     let comment = inputText.value
     inputText.value = "";
     if (comment !== "") {
-      setCommentL(prev => [...prev, { "content": comment }])
+      setCommentL(prev => [...prev, { "content": comment, "id": Math.ceil(Math.random() * 10000) }])
     }
     else {
       alert("No comment");
     }
   }
-  console.log("run")
   return (
     <div className="App">
-      <img className="logo" src='./flatagram-logo.png' alt='flatagram logo' />
+      <img className="logo" src={flat} alt='flatagram logo' />
       <div className='Flatagram-container'>
         <ImageDiv
           handleClicks={fetcher}
